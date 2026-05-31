@@ -1,30 +1,26 @@
-# Análisis de Datos para Plataforma de Libros en Línea (SQL & Pandas)
+# Online Book Platform Analysis: Catalog Optimization & Customer Insights (SQL & Pandas) 📚
 
-##  Descripción del Proyecto
-Este proyecto simula un caso de estudio real donde se analiza la base de datos de una plataforma de libros electrónicos (vía una base de datos relacional). El objetivo estratégico es extraer insights sobre el catálogo de libros, el volumen de páginas por editorial, la satisfacción de los usuarios con los autores y el comportamiento de los clientes más activos ("Power Users") para guiar las decisiones del equipo de Producto y Contenido.
+## 🎯 The Challenge
+In digital entertainment and e-commerce platforms, data-driven decisions are vital for keeping users engaged. This project simulates a real-world case study analyzing a digital bookstore's relational database. The strategic objective was to extract actionable insights regarding catalog distribution, content volume per publisher, author ratings, and the behavioral patterns of highly active customers ("Power Users") to guide the Product and Content teams' strategic planning.
 
-##  Stack Tecnológico
-* **Lenguaje:** Python 3.12
-* **Análisis de Datos:** Pandas
-* **Base de Datos y Conexión:** SQL, SQLAlchemy
-* **Motor de BD Local:** SQLite (para garantizar reproducibilidad autónoma)
-* **Entorno:** Jupyter Notebook / VS Code
+## 🛠️ The Process
+I designed a fully automated and reproducible data pipeline that bridges relational databases with Python analytics:
 
-##  Modelo de Datos (Estructura)
-El ecosistema de datos está compuesto por 5 tablas interconectadas:
-1. `books`: Catálogo central (IDs, títulos, páginas, fechas, autores y editoriales).
-2. `authors`: Registro de escritores y escritoras.
-3. `publishers`: Casas editoriales de los libros.
-4. `ratings`: Calificaciones numéricas (1 a 5 estrellas) otorgadas por los usuarios.
-5. `reviews`: Reseñas cualitativas en formato de texto escritas por los usuarios.
+* **Data Architecture & Tooling:** Leveraged **Python 3.12** and **Pandas** for data manipulation, using **SQLAlchemy** to establish seamless connection strings with a local **SQLite** database engine, ensuring full project portability.
+* **Relational Database Modeling:** Worked with an interconnected 5-table ecosystem: `books` (central catalog), `authors`, `publishers`, `ratings`, and `reviews` (qualitative feedback).
+* **Advanced Query Engineering:** Crafted optimized SQL scripts utilizing advanced relational logic—such as Common Table Expressions (**CTEs / `WITH` clauses**), **`HAVING`** filters, conditional aggregations, and multi-table **`LEFT JOIN`** operations—to prevent redundant subqueries and minimize data retrieval times.
 
-##  Consultas Estratégicas Resueltas
-El cuaderno contiene la lógica optimizada para resolver las siguientes necesidades de negocio:
-* **Métrica 1:** Conteo de libros publicados después del 1 de enero de 2000.
-* **Métrica 2:** Cálculo del número de reseñas y la calificación promedio para cada libro del catálogo.
-* **Métrica 3:** Identificación de la editorial líder en contenido relevante (libros con más de 50 páginas).
-* **Métrica 4:** Encontrar al autor con la calificación promedio más alta (filtrando por volumen mínimo mediante `HAVING`).
-* **Métrica 5:** Determinar el número promedio de reseñas de texto entre los usuarios más activos (*Power Users*) usando Expresiones de Tabla Comunes (CTEs con `WITH`) y `LEFT JOIN`.
+## 📈 Strategic Metrics & Queries Resolved
+Through targeted SQL execution, I successfully modeled and resolved the following core business requirements:
 
-##  Nota de Ingeniería y Reproduducibilidad
-Para asegurar que este repositorio sea **Ejecutable y autónomo**, la arquitectura se migró a un entorno local basado en **SQLite**. El notebook incluye un pipeline que inicializa las tablas con datos de muestra idénticos en estructura a la base de producción, permitiendo ejecutar todas las consultas avanzadas en tiempo real.
+1. **Catalog Timeline Filter:** Isolated and counted books published after January 1, 2000, to evaluate modern inventory growth.
+2. **Engagement Performance Per Asset:** Calculated the exact review volume and the average customer rating for every individual book in the database.
+3. **Content Leadership Identification:** Located the leading publisher specializing in high-density content (books exceeding 50 pages) to determine key inventory suppliers.
+4. **Author Quality Benchmark:** Identified the highest-rated author by applying a **`HAVING`** clause to filter out outliers and focus exclusively on writers with a statistically significant review volume.
+5. **Power User Behavioral Analysis:** Determined the average number of text reviews authored by the platform's most active clients ("Power Users") using a **`WITH` (CTE)** block combined with a **`LEFT JOIN`**.
+
+> **🚀 Engineering & Reproducibility Note:** To ensure this repository is completely autonomous and executable out-of-the-box, the notebook includes a pipeline that automatically initializes the SQLite database and populates the tables with structural sample data, allowing the advanced queries to run in real time.
+
+## 📂 Repository Structure
+* `telecom_analysis.ipynb`: Complete Jupyter Notebook documenting the ETL workflow, database connection strings, and the execution of advanced SQL queries.
+* `database/`: Local SQLite relational database file containing the schema definitions and populated sample datasets.
