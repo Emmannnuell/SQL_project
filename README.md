@@ -22,5 +22,5 @@ Through targeted SQL execution, I successfully modeled and resolved the followin
 > **🚀 Engineering & Reproducibility Note:** To ensure this repository is completely autonomous and executable out-of-the-box, the notebook includes a pipeline that automatically initializes the SQLite database and populates the tables with structural sample data, allowing the advanced queries to run in real time.
 
 ## 📂 Repository Structure
-* `telecom_analysis.ipynb`: Complete Jupyter Notebook documenting the ETL workflow, database connection strings, and the execution of advanced SQL queries.
+* `analisis_libros_sql.ipynb`: Complete Jupyter Notebook documenting the ETL workflow, database connection strings, and the execution of advanced SQL queries.
 * `database/`: Local SQLite relational database file containing the schema definitions and populated sample datasets.
